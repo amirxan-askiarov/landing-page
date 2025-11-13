@@ -1,0 +1,283 @@
+
+//$btn-blue-color
+@mixin link-hovered {
+  color: #3E9CDC;
+}
+
+//$input-text-selected-color
+@mixin link-focused {
+  outline: 2px solid #42a9ed;
+  outline-offset: 0.4rem;
+}
+
+//$btn-text-dark-color
+@mixin btn-focused-dark {
+  outline: 2px solid #2A2B30;
+  outline-offset: 0.4rem;
+}
+
+//$btn-blue-text-color
+@mixin btn-focused-light {
+  outline: 2px solid #FFFFFF;
+  outline-offset: 0.4rem;
+}
+
+
+/**** I. LAYOUT ****/
+// 1) Media queries:
+//// Screens:
+$breakpoints: (
+  small-phone: 360px,
+  small-landscape-phone: 568px,
+  large-landscape-phone: 666px,
+  tablet: 768px,
+  large-tablet: 1024px,
+  small-laptop: 1280px,
+  desktop: 1440px,
+  large-desktop: 1920px
+);
+
+@function get-bp($name) {
+  @if map-has-key($breakpoints, $name) {
+    @return map-get($breakpoints, $name);
+  } @else {
+    @error "❌ Invalid breakpoint `#{$name}`. Must be one of: #{map-keys($breakpoints)}";
+  }
+}
+
+@mixin above($bp) {
+  @media only screen and (min-width: get-bp($bp)) {
+    @content;
+  }
+}
+
+@mixin below($bp) {
+  @media only screen and (max-width: calc(get-bp($bp) - 1px)) {
+    @content;
+  }
+}
+
+@mixin between($min, $max) {
+  @media only screen and (min-width: get-bp($min)) and (max-width: calc(get-bp($max) - 1px)) {
+    @content;
+  }
+}
+////
+
+// 2) Flexbox
+@mixin flex-center($direction: row) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-center-vert {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-center-horiz {
+  display: flex;
+  justify-content: center;
+}
+
+// 3) Grid
+@mixin grid-center {
+  display: grid;
+  place-items: center;
+}
+
+
+// 4) Position
+@mixin fixed-size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin container($max-width: 100%, $padding: 1rem) {
+  width: 100%;
+  max-width: $max-width;
+  padding: 0 $padding;
+}
+
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin absolute-cover {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@mixin pseudo-el(
+  $width: 100%,
+  $height: 100%,
+  $display: inline-block,
+  $pos: absolute,
+  $content: ""
+) {
+  content: $content;
+  display: $display;
+  position: $pos;
+  @include fixed-size($width, $height);
+}
+
+@mixin overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100
+}
+
+/**** II. STYLING ****/
+// 1) Fonts
+@mixin fluid-font($min-size, $viewport-min, $viewport-max, $max-size) {
+  font-size: clamp(#{$min-size}, 
+  calc((100vw - #{$viewport-min}) * 1vw + #{$min-size}), #{$max-size});
+}
+
+@mixin font-face($font-name, $file-name, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $font-name;
+    src: url("/woff2/" + $file-name + ".woff2" ) format("woff2"), 
+    url("/woff2/" + $file-name + ".woff") format("woff");
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+  }
+}
+
+@mixin text-ellipsis($lines: 1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+}
+
+@mixin font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+// 2) Background
+@mixin background-cover {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+// 3) Animations and transitions
+@mixin transition($props: all, $time: 0.3s, $ease: ease) {
+  transition: $props $time $ease;
+}
+
+@mixin fade-in($time: 0.3s) {
+  animation: fadeIn $time ease forwards;
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+}
+
+@mixin fade-out($time: 0.3s) {
+  animation: fadeOut $time ease forwards;
+  @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+}
+
+@mixin slide-up($dist: 1rem, $time: 0.3s) {
+  animation: slideUp $time ease forwards;
+  @keyframes slideUp { 
+    from { 
+      transform: translateY($dist); 
+      opacity: 0; 
+    } to { 
+      transform: none; 
+      opacity: 1; 
+    } 
+  }
+}
+
+@mixin hover-grow($scale: 1.05) {
+  transition: transform 0.3s ease;
+  &:hover { transform: scale($scale); }
+}
+
+// Other
+@mixin hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar { display: none; }
+}
+
+$small-phone: 360px;
+$small-landscape-phone: 568px;
+$large-landscape-phone: 666px; 
+$tablet: 768px;
+$laptop: 1024px;
+$large-desktop: 1440px;
+
+@mixin above($width) {
+  @media only screen and (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin below($width) {
+  @media only screen and (max-width: calc($width - 1)) {
+    @content;
+  }
+}
+
+@mixin between($min-width, $max-width) {
+  @media only screen and (min-width: $min-width) and (max-width: $max-width) {
+    @content;
+  }
+}
+
+@mixin scrollbar(
+  $thumb-background-color: hsl(0deg 0% 0% / 15%),
+  $thumb-background-color-hover: hsl(0deg 0% 0% / 25%),
+  $track-background-color: hsl(0deg 0% 0% / 5%),
+  $size: 0.5rem,
+  $border-radius: 0.25rem
+) {
+  &::-webkit-scrollbar {
+    block-size: $size;
+    inline-size: $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $thumb-background-color;
+    border-radius: $border-radius;
+
+    &:hover {
+      background: $thumb-background-color-hover;
+    }
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $track-background-color;
+    border-radius: $border-radius;
+  }
+}

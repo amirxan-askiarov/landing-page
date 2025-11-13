@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="amirxan-askiarov">
+    <meta name="description" content="Landing page">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./public/svg/vk-logo.svg" type="image/svg"> 
+
+    <link rel="preload" as="image" 
+    imagesrcset="./public/webp/intro-mobile.webp 665vw, ./public/jpeg/intro-mobile.jpeg 665vw,
+    ./public/webp/intro-tablet.webp 1279vw, ./public/jpeg/intro-tablet.jpeg 1279vw,
+    ./public/webp/intro.webp, ./public/jpeg/intro.jpeg">
+    
+    <title>Landing page</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="header-container">
+        <h1 class="header__logo">
+          <a href="/" class="header__logo-link" aria-label="Главная страница">
+            LoremIpsum.<span class="header__logo-accent">Net</span>
+          </a>
+        </h1>
+      
+        <button 
+          class="header__mobile-menu"
+          aria-controls="mobile-nav-list"
+        >
+          <span class="header__mobile-menu-icon"></span>
+        </button>
+
+        <ul class="header__nav-list">
+          <li class="header__nav-list__item header__nav-list__item--current">
+            <a class="header__nav-list__link header__nav-list__link--current"
+            href="/" aria-label="Страница Бизнес">
+              Бизнес
+            </a>
+          </li>
+          <li class="header__nav-list__item">
+            <a class="header__nav-list__link header__nav-list__link--current"
+            href="/" aria-label="Страница О нас">
+              О нас
+            </a>
+          </li>
+          <li class="header__nav-list__item">
+            <a class="header__nav-list__link header__nav-list__link--current"
+            href="/" aria-label="Страница Цены">
+              Цены
+            </a>
+          </li>
+          <li class="header__nav-list__item">
+            <a class="header__nav-list__link header__nav-list__link--current"
+            href="/" aria-label="Страница Оформить заказ">
+              Оформить заказ
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+
+      <section class="intro-section">
+        <div class="intro-container">
+          <h2 class="intro__title">
+            <span class="intro__title-accent">Lorem ipsum</span> 
+            dolor sit<br> amet consectetur
+            <span class="intro__title-accent">adipiscing</span>
+          </h2>
+
+          <div class="intro-section__list-container">
+            <h3 class="intro-section__list-title">
+              At vero eos et accusamus et iusto odio dignissimos ducimus!
+            </h3>
+            <ul class="intro-section__list">
+              <li class="intro-section__item"><span class="intro-section__item_before">-</span>Totam rem aperiam eaque ipsa</li>
+              <li class="intro-section__item"><span class="intro-section__item_before">-</span>Sit voluptatem accusantium doloremque laudantium</li>
+              <li class="intro-section__item"><span class="intro-section__item_before">-</span>Sed ut perspiciatis, unde omnis iste natus error</li>
+            </ul>
+          </div>
+
+          <div class="intro-section__btn-container">
+            <button class="intro-section__btn_cta">
+              заказать
+            </button>
+            <button class="intro-section__btn_more">
+              подробнее
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="order-section">
+        <div class="order-section-container">
+          <div class="order-section__description-container">
+            <header class="order-section__title-container">
+              <h2 class="order-section__main-title">Оформление 
+                <span class="order-section__main-title-accent">Заказа</span>
+              </h2>
+              <p class="order-section__main-subtitle">
+                Перед заполнением формы ознакомьтесь с нашей схемой работы!
+              </p>
+            </header>
+
+            <ul class="order-section__order-steps">
+              <li class="order-section__order-step">
+                <div class="order-section__order-bg">
+                  <img src="./public/svg/search.svg" alt="">
+                  <div class="order-section__dot-group">
+                    <div class="order-section__dot"></div>
+                    <div class="order-section__dot"></div>
+                    <div class="order-section__dot"></div>
+                    <div class="order-section__dot"></div>
+                    <div class="order-section__dot"></div>
+                  </div>
+                </div>
+                <p class="order-section__order-text">
+                  Lorem ipsum dolor sit amet
+                </p>
+              </li>
+              <li class="order-section__order-step">
+                <div class="order-section__order-bg">
+                  <img src="./public/svg/percent.svg" alt="">
+                  <div class="order-section__dot-group">
+                    <div class="order-section__dot"></div>
+                    <div class="order-section__dot"></div>
+                    <div class="order-section__dot"></div>
+                    <div class="order-section__dot"></div>
+                    <div class="order-section__dot"></div>
+                  </div>
+                </div>
+                <p class="order-section__order-text">
+                  Сonsecteturadipiscing elit
+                </p>
+              </li>
+              <li class="order-section__order-step">
+                <div class="order-section__order-bg">
+                  <img src="./public/svg/add-file.svg" alt="">
+                  <div class="order-section__dot-group">
+                    <div class="order-section__dot"></div>
+                    <div class="order-section__dot"></div>
+                    <div class="order-section__dot"></div>
+                    <div class="order-section__dot"></div>
+                    <div class="order-section__dot"></div>
+                  </div>
+                </div>
+                <p class="order-section__order-text">
+                  Sed do eiusmod tempor
+                </p>
+              </li>
+              <li class="order-section__order-step">
+                <div class="order-section__order-bg">
+                  <img src="./public/svg/letter.svg" alt="">
+                  <div class="order-section__dot-group">
+                    <div class="order-section__dot"></div>
+                    <div class="order-section__dot"></div>
+                    <div class="order-section__dot"></div>
+                    <div class="order-section__dot"></div>
+                    <div class="order-section__dot"></div>
+                  </div>
+                </div>
+                <p class="order-section__order-text">
+                  Esse cillum doloreeu fugiat
+                </p>
+              </li>
+              <li class="order-section__order-step">
+                <div class="order-section__order-bg">
+                  <img src="./public/svg/dollar.svg" alt="">
+                </div>
+                <p class="order-section__order-text">
+                  Excepteur sint occaecat cupidatat non proident
+                </p>
+              </li>
+            </ul>
+          </div>
+          
+          <form class="order-form">
+            <div class="select-container">
+              <label class="order-form__system-label" for="system"></label>
+              <select class="order-form__system-input" name="system" id="system" required></select>
+              <div class="select-header" tabindex="0" role="button">
+                <span class="select-header__text">Выберите тип системы</span>
+                <img class="select-header__arrow" 
+                src="./public/svg/arrow.svg" alt="" />
+              </div>
+              <div class="order-form__select-options-list">
+                <option class="order-form__select-option" name="system" tabindex="0" for="system" data-value="Sed ut perspiciatis">Sed ut perspiciatis</option>
+                <option class="order-form__select-option" name="system" tabindex="0" data-value="Nemo enim ipsam">Nemo enim ipsam</option>
+                <option class="order-form__select-option" name="system" tabindex="0" data-value="Et harum quidem">Et harum quidem</option>
+                <option class="order-form__select-option" name="system" tabindex="0" data-value="Temporibus autem">Temporibus autem</option>
+                <option class="order-form__select-option" name="system" tabindex="0" data-value="Temporibus autem">Itaque earum rerum</option>
+                <option class="order-form__select-option" name="system" tabindex="0" data-value="Sed ut perspiciatis1">Sed ut perspiciatis1</option>
+                <option class="order-form__select-option" name="system" tabindex="0" data-value="Nemo enim ipsam2">Nemo enim ipsam2</option>
+                <option class="order-form__select-option" name="system" tabindex="0" data-value="Et harum quidem3">Et harum quidem3</option>
+                <option class="order-form__select-option" name="system" tabindex="0" data-value="Temporibus autem4">Temporibus autem4</option>
+                <option class="order-form__select-option" name="system" tabindex="0" data-value="Temporibus autem5">Itaque earum rerum5</option>
+                <option class="order-form__select-option" name="system" tabindex="0" data-value="Sed ut perspiciatis6">Sed ut perspiciatis6</option>
+                <option class="order-form__select-option" name="system" tabindex="0" data-value="Nemo enim ipsam7">Nemo enim ipsam7</option>
+                <option class="order-form__select-option" name="system" tabindex="0" data-value="Et harum quidem9">Et harum quidem8</option>
+                <option class="order-form__select-option" name="system" tabindex="0" data-value="Temporibus autem9">Temporibus autem9</option>
+                <option class="order-form__select-option" name="system" tabindex="0" data-value="Temporibus autem10">Itaque earum rerum10</option>
+              </div>
+            </div>
+            
+            <label class="order-form__email-label" for="email"></label>
+            <input name="email" id="email" class="order-form__email-input" 
+              placeholder="Ваш e-mail" type="email" required />
+
+            <label class="order-form__name-label" for="name"></label>
+            <input name="name" id="name" class="order-form__name-input" 
+              placeholder="Ваше имя" type="text" required />
+
+            <div class="order-form__range-container">
+              <label class="order-form__range-label" for="range"></label>
+              <div class="order-form__range-text-container">
+                <span class="order-form__range-text">Sed ut perspiciatis, unde omnis iste natus</span>
+                <span class="order-form__range-value">75%</span>
+              </div>
+              <input name="range" id="range" class="order-form__range-input" type="range" min="0" max="84" required />
+            </div>
+
+            <div class="order-form__file-container"> 
+              <label class="order-form__file-label" for="file">
+                <img src="./public/svg/file.svg" alt="" class="order-form__file-label__file-icon" alt="" />
+                <span class="order-form__file-text">Прикрепить файл</span>
+              </label>
+              <input name="file" id="file" class="order-form__file-input" type="file" required />
+            </div>
+            <button type="submit" class="order-form__btn-submit">Отправить</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer__container">
+        <p class="footer__copyright">© 2018 «LoremIpsum.net» Все права защищены.</p>
+
+        <svg class="footer__bar-icon--first" 
+        width="1" height="18" viewBox="0 0 1 18" fill="none" 
+        xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H1V18H0V0Z" fill="#C3C3C3"/>
+        </svg>
+
+        <ul class="footer__payments-list">
+          <li class="footer__payment-item">
+            <img class="footer__payment-icon" 
+            src="./public/svg/qiwi-logo.svg" alt="" />
+            Qiwi wallet
+          </li>
+          <li class="footer__payment-item">
+            <img class="footer__payment-icon" 
+            src="./public/svg/yandex-money-logo.svg" alt="" />
+            Yandex Money
+          </li>
+          <li class="footer__payment-item">
+            <img class="footer__payment-icon" 
+            src="./public/svg/webmoney-logo.svg" alt="" />
+            Web Money
+          </li>
+        </ul>
+
+        <svg class="footer__bar-icon" 
+        width="1" height="18" viewBox="0 0 1 18" fill="none" 
+        xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H1V18H0V0Z" fill="#C3C3C3"/>
+        </svg>
+        
+        <ul class="footer__contacts-list">
+          <li class="footer__contact-item">
+            <a class="footer__contact-item-link" tabindex="0">
+              <img class="footer__contact-icon" 
+              src="./public/svg/letter-blue.svg" alt="" />
+              info@ipsum228.com
+            </a>
+          </li>
+          <li class="footer__contact-item">
+            <a class="footer__contact-item-link" tabindex="0">
+              <img class="footer__contact-icon" 
+              src="./public/svg/vk-logo.svg" alt="" />
+              Мы вконтакте
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+  <script type="module" src="./src/main.js" defer></script>
+</html>

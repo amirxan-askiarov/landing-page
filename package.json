@@ -1,0 +1,20 @@
+{
+  "name": "landing-page",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "homepage": "https://github.com/amirxan-askiarov/landing-page",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "sass-embedded": "^1.93.3",
+    "vite": "^7.2.2"
+  },
+  "dependencies": {
+    "vite-plugin-compression": "^0.5.1"
+  }
+}
